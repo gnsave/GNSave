@@ -64,6 +64,7 @@ Verwendeten Funktionen
 namespaces/fileserver/views.py:
 
 add_user:
+
 .. code-block:: python
 
   def add_user(username, password, email, superuser=False):
@@ -80,6 +81,7 @@ add_user:
     os.mkdir(f"./files/users/{username}")
     
 add_group:
+
 .. code-block:: python
 
   def add_group(name):
@@ -88,6 +90,7 @@ add_group:
     os.mkdir(f"./files/courses/{name}")
     
 add_user_to_group:
+
 .. code-block:: python
 
   def add_user_to_group(username, groupname):
@@ -98,6 +101,7 @@ add_user_to_group:
     os.mkdir(f"./files/courses/{groupname}/{username}")
     
 delete_user:
+
 .. code-block:: python
 
   def delete_user(username):
