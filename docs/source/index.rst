@@ -1,4 +1,4 @@
-Willkommen zur GNSaves Dokumentation!
+Willkommen zur GNSave Dokumentation!
 ===================================
 
 **GNSave** ist eine Django App die den Netzwerktechnik Unterricht mit GNS3 erleichtern soll. 
