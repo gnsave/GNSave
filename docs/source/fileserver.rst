@@ -34,6 +34,7 @@ Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Cours
 .. code-block:: bash
 
     files
+    │
     ├── users
     │   ├── lorenz
     │   │   └── project.gns3project
@@ -56,15 +57,59 @@ Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Cours
 .. image:: images/filesystem.svg
   :width: 800
   :alt: schüler
-
-
-To-Do
    
-Verwendete Module
+Verwendeten Funktionen
 ----------------
 
-To-Do
-   
+namespaces/fileserver/views.py:
+
+add_user:
+.. code-block:: python
+
+  def add_user(username, password, email, superuser=False):
+      user = get_user_model().objects.create_user(
+      username=username,
+      email=email,
+      password=password
+    )
+    if superuser:
+        user.is_superuser = True
+        user.is_staff = True
+    user.save()
+    
+    os.mkdir(f"./files/users/{username}")
+    
+add_group:
+.. code-block:: python
+
+  def add_group(name):
+    Group.objects.get_or_create(name=name)
+    
+    os.mkdir(f"./files/courses/{name}")
+    
+add_user_to_group:
+.. code-block:: python
+
+  def add_user_to_group(username, groupname):
+    my_group = Group.objects.get(name=groupname)
+    myuser = User.objects.get(username=username)
+    my_group.user_set.add(myuser)
+    
+    os.mkdir(f"./files/courses/{groupname}/{username}")
+    
+delete_user:
+.. code-block:: python
+
+  def delete_user(username):
+    get_user_model().objects.get(username=username).delete()
+    courses = os.listdir("./files/courses/")
+    for kurs in courses:
+        if os.path.exists(f"./files/courses/{kurs}/{username}"):
+            shutil.rmtree(f"./files/courses/{kurs}/{username}")
+
+    shutil.rmtree(f"./files/users/{username}")
+    
+ 
    
 Überblick der Features
 ----------------
