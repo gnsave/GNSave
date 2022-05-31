@@ -32,7 +32,7 @@ Aufbau
 Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Course Files
 
 .. image:: images/filesystem.svg
-  :width: 600
+  :width: 800
   :alt: schüler
 
 
