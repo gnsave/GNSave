@@ -58,6 +58,8 @@ Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Cours
   :width: 800
   :alt: schüler
    
+.. _verwendete_funktionen:
+
 Verwendete Funktionen
 ----------------
 
@@ -122,6 +124,6 @@ Das von uns erstellte Filesystem hat keine Permissions, deswegen muss die Zugrif
 
 Das Filesystem ermöglicht jedoch trotzdem eine einfache Segregation von privaten und kursspezifischen Files. Außerdem ermöglicht es die Segregation zwischen den Files von Schülern. Jeder Schüler kann nur auf seine eigenen Dateien zugreifen und nicht auf die von seinen Mitschülern oder anderen Schülern.
 
-Die automatisierte Ordnerverwaltung wird durch die oben angegeben Python Funktionen (:ref:`Verwendete Funktionen`) realisiert und sie sind deswegen in der Django App eingebunden
+Die automatisierte Ordnerverwaltung wird durch die oben angegeben Python Funktionen ( :ref:`verwendete_funktionen` ) realisiert und sie sind deswegen in der Django App eingebunden
 
  
