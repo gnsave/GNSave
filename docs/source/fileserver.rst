@@ -58,12 +58,12 @@ Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Cours
   :width: 800
   :alt: schüler
    
-Verwendeten Funktionen
+Verwendete Funktionen
 ----------------
 
-namespaces/fileserver/views.py:
+namespaces/fileserver/views.py
 
-add_user:
+**add_user**:
 
 .. code-block:: python
 
@@ -80,7 +80,7 @@ add_user:
     
     os.mkdir(f"./files/users/{username}")
     
-add_group:
+**add_group**:
 
 .. code-block:: python
 
@@ -89,7 +89,7 @@ add_group:
     
     os.mkdir(f"./files/courses/{name}")
     
-add_user_to_group:
+**add_user_to_group**:
 
 .. code-block:: python
 
@@ -100,7 +100,7 @@ add_user_to_group:
     
     os.mkdir(f"./files/courses/{groupname}/{username}")
     
-delete_user:
+**delete_user**:
 
 .. code-block:: python
 
@@ -118,6 +118,10 @@ delete_user:
 Überblick der Features
 ----------------
 
-To-Do
+Das von uns erstellte Filesystem hat keine Permissions, deswegen muss die Zugriffsverwaltung von der Weboberfläche übernommen werden.
+
+Das Filesystem ermöglicht jedoch trotzdem eine einfache Segregation von privaten und kursspezifischen Files. Außerdem ermöglicht es die Segregation zwischen den Files von Schülern. Jeder Schüler kann nur auf seine eigenen Dateien zugreifen und nicht auf die von seinen Mitschülern oder anderen Schülern.
+
+Die automatisierte Ordnerverwaltung wird durch die oben angegeben Python Funktionen (ref:`Verwendete Funktionen`) realisiert und sie sind deswegen in der Django App eingebunden
 
  
