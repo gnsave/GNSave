@@ -18,11 +18,3 @@ To-Do
 ----------------
 
 To-Do
- 
-.. toctree::
-   :hidden:
-   
-   installation
-   overview
-   website
-   fileserver

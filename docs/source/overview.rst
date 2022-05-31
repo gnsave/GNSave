@@ -19,11 +19,4 @@ To-Do
 
 To-Do
 
-.. toctree::
-   :hidden:
-   
-   installation
-   gns3-api
-   website
-   fileserver
  

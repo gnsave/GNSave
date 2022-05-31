@@ -56,12 +56,5 @@ Testung der Installation
 
    gnsave@server $ curl -X GET http://localhost:80/
 
-.. toctree::
-   :hidden:
-   
-   overview
-   gns3-api
-   website
-   fileserver
 
  
