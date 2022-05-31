@@ -16,7 +16,6 @@ Für mehr Informationen und Hilfe bei der Installation siehe Sektion :doc:`insta
 Inhalte
 --------
 .. toctree::
-   :maxdepth: 2
    
    installation
    overview
