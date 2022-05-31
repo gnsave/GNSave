@@ -13,13 +13,13 @@ Filesystem
 
 Das Filesystem ist in private und Kurs Dateien geteilt. Auf die privaten Dateien hat nur der jeweilige User Zugriff. Auf die Kurs Dateien hat wieder jeder Schüler nur auf seine eigenen Dateien Zugriff, aber der Kursleiter/Lehrer kann jegliche Schülerdateien einsehen.
 
-Die Dateien auf die Lehrer Zugriff hat könenn so aussehen (er hat in jedem Folder alle Rechte):
+So könnte das Filesystem eines Lehrers aussehen (er hat in jedem Folder den er sieht alle Rechte):
 
 .. image:: images/lehrer.svg
   :width: 600
   :alt: lehrer
  
-Im Kontrast dazu sind das zum Beispiel die Dateien die ein Schüler sieht(grau heißt er kann nichts verändern):
+Im Kontrast dazu ist das zum Beispiel das Filesystem das ein Schüler sieht(grau heißt er kann nichts verändern):
 
 .. image:: images/schüler.svg
   :width: 600
