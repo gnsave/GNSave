@@ -41,17 +41,17 @@ Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Cours
     │   └── arthur
     │      └── plf_vorbereitung.gns3project
     │
-    ├── courses      
-    │   ├── 21-22-4AX
-    │   │   └── plf_uebung.gns3project
-    │   │   └── lorenz
-    │   │   └── arthur
-    │   │      └── plf_uebung.gns3project
-    │   │ 
-    │   └── 22-23-5AX
-    │       └── matura_uebung.gns3project
-    │       └── arthur
-    │          └── matura_uebung.gns3project
+    └── courses      
+        ├── 21-22-4AX
+        │   └── plf_uebung.gns3project
+        │   └── lorenz
+        │   └── arthur
+        │      └── plf_uebung.gns3project
+        │ 
+        └── 22-23-5AX
+           └── matura_uebung.gns3project
+           └── arthur
+              └── matura_uebung.gns3project
 
 .. image:: images/filesystem.svg
   :width: 800
