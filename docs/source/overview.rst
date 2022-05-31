@@ -23,7 +23,6 @@ To-Do
    :hidden:
    
    installation
-   overview
    gns3-api
    website
    fileserver

@@ -59,7 +59,6 @@ Testung der Installation
 .. toctree::
    :hidden:
    
-   installation
    overview
    gns3-api
    website

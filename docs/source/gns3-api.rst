@@ -24,6 +24,5 @@ To-Do
    
    installation
    overview
-   gns3-api
    website
    fileserver
