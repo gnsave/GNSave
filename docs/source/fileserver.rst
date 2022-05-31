@@ -31,7 +31,8 @@ Aufbau
 
 Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Course Files
 
-::
+.. code-block:: bash
+
     files
     ├── users
     │   ├── lorenz
