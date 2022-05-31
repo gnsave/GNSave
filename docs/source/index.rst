@@ -11,7 +11,7 @@ Für mehr Informationen und Hilfe bei der Installation siehe Sektion :doc:`insta
 
 .. note::
 
-   This project is under active development.
+   Dieses Projekt ist in Arbeit.
 
 Inhalte
 --------
