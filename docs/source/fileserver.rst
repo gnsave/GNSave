@@ -16,13 +16,13 @@ Das Filesystem ist in private und Kurs Dateien geteilt. Auf die privaten Dateien
 Die Dateien auf die Lehrer Zugriff hat könenn so aussehen (er hat in jedem Folder alle Rechte):
 
 .. image:: images/lehrer.svg
-  :width: 400
+  :width: 600
   :alt: lehrer
  
 Im Kontrast dazu sind das zum Beispiel die Dateien die ein Schüler sieht(grau heißt er kann nichts verändern):
 
 .. image:: images/schüler.svg
-  :width: 400
+  :width: 600
   :alt: schüler
 
 
