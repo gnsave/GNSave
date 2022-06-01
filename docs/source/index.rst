@@ -9,7 +9,7 @@ Außerdem bietet GNSave einen Weg für Schüler ihre GNS3 Projekte zu speichern 
 
 Für mehr Informationen und Hilfe bei der Installation siehe Sektion :doc:`installation`  
 
-Für eine Überblick über das Projekt siehe Sektion:doc:`overview`
+Für eine Überblick über das Projekt siehe Sektion :doc:`overview`
 
 .. note::
 
