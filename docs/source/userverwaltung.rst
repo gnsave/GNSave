@@ -127,7 +127,7 @@ add_user
    os.mkdir(f"./files/users/{username}")
     
 change_password
-^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
