@@ -6,9 +6,9 @@ GNS3 API
 Aufbau
 ------------
 
-.. image:: images/gns_api_class_diagram.png
+.. image:: images/gns3-api-class-diagram.svg
   :width: 600
-  :alt: GNS-API Klassendiagramm
+  :alt: GNS3-API Klassendiagramm
   
 To-Do
    
