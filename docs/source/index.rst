@@ -21,7 +21,7 @@ Inhalte
    
    installation
    overview
-   gns3-api
+   build-topology
    website
    userverwaltung
    fileserver
