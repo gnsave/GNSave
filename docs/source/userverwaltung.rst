@@ -104,12 +104,69 @@ Ein Lehrer kann Gruppen erstellen und User zu ihr hinzufügen.
   :alt: add_group
 
 
+Verwendete Funktionen
+----------------
+
+namespaces/fileserver/views.py
+
+**add_user**
+
+.. code-block:: python
+
+   def add_user(username, password, email, superuser=False):
+       user = get_user_model().objects.create_user(
+       username=username,
+       email=email,
+       password=password
+   )
+   if superuser:
+       user.is_superuser = True
+       user.is_staff = True
+   user.save()
+   os.mkdir(f"./files/users/{username}")
+    
+**change_password**
+
+.. code-block:: python
+
+   def change_password(username, password):
+       user = get_user_model().objects.get(username=username)
+       user.set_password(password)
+       user.save()
+ 
+**delete_user**
+
+.. code-block:: python
+
+   def delete_user(username):
+       get_user_model().objects.get(username=username).delete()
+    
+       courses = os.listdir("./files/courses/")
+       for kurs in courses:
+           if os.path.exists(f"./files/courses/{kurs}/{username}"):
+               shutil.rmtree(f"./files/courses/{kurs}/{username}")
+
+       shutil.rmtree(f"./files/users/{username}")
+    
+**add_group**
+
+.. code-block:: python
+
+   def add_group(name):
+       Group.objects.get_or_create(name=name)
+       os.mkdir(f"./files/courses/{name}")
+    
+**add_user_to_group**
+
+.. code-block:: python
+
+   def add_user_to_group(username, groupname):
+       my_group = Group.objects.get(name=groupname)
+       myuser = User.objects.get(username=username)
+       my_group.user_set.add(myuser)
+       os.mkdir(f"./files/courses/{groupname}/{username}")
+    
 Überblick der Features
 ----------------
 
-To-Do
-
-Diagramme
-----------------
-
-To-Do
+Die Userverwaltung ermöglicht den Lehrern bequem auf der Weboberfläche User und Gruppen zu verwalten. Die Userverwaltung ist auch der Grundstein des Fileservers. Dadurch, dass die Schüler durch die Django Accounts segregiert werden können wir beiden Typen verschiedene Features freischalten und verschiedenen Usern erlauben, Zugriff nur auf die "richtigen" Dateien zu haben.
