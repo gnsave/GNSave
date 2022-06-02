@@ -107,9 +107,10 @@ Ein Lehrer kann Gruppen erstellen und User zu ihr hinzufügen.
 Verwendete Funktionen
 ----------------
 
-namespaces/fileserver/views.py
+Pfad: namespaces/fileserver/views.py
 
-**add_user**
+add_user
+^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -125,7 +126,8 @@ namespaces/fileserver/views.py
    user.save()
    os.mkdir(f"./files/users/{username}")
     
-**change_password**
+change_password
+^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -134,7 +136,8 @@ namespaces/fileserver/views.py
        user.set_password(password)
        user.save()
  
-**delete_user**
+delete_user
+^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -148,7 +151,8 @@ namespaces/fileserver/views.py
 
        shutil.rmtree(f"./files/users/{username}")
     
-**add_group**
+add_group
+^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -156,7 +160,8 @@ namespaces/fileserver/views.py
        Group.objects.get_or_create(name=name)
        os.mkdir(f"./files/courses/{name}")
     
-**add_user_to_group**
+add_user_to_group
+^^^^^^^^^^^^
 
 .. code-block:: python
 
