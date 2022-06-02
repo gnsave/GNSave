@@ -65,7 +65,8 @@ Verwendete Funktionen
 
 namespaces/fileserver/views.py
 
-**add_user**:
+add_user
+^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -82,7 +83,8 @@ namespaces/fileserver/views.py
     
     os.mkdir(f"./files/users/{username}")
     
-**add_group**:
+add_group
+^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -91,7 +93,8 @@ namespaces/fileserver/views.py
     
     os.mkdir(f"./files/courses/{name}")
     
-**add_user_to_group**:
+add_user_to_group
+^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -102,7 +105,8 @@ namespaces/fileserver/views.py
     
     os.mkdir(f"./files/courses/{groupname}/{username}")
     
-**delete_user**:
+delete_user
+^^^^^^^^^^^^
 
 .. code-block:: python
 
