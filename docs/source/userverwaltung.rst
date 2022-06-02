@@ -77,14 +77,33 @@ Die File könnte zum Beispiel so aussehen:
 
 .. code-block:: text
 
-    lorenz, gnsave123!, lorenz.bauer@htl.rennweg.at, user
-    darius, gnsave123!, darius@htl.rennweg.at, user
-    luther, gnsave123!, luther@htl.rennweg.at, user
-    mateusz, gnsave123!, mateusz@htl.rennweg.at, user
-    tino, gnsave123!, tino@htl.rennweg.at, user
-
+    lorenz, ganzSupergeheim123!, lorenz.bauer@htl.rennweg.at, user
+    darius, ganzSupergeheim123!, darius@htl.rennweg.at, user
+    luther, ganzSupergeheim123!, luther@htl.rennweg.at, user
+    mateusz, ganzSupergeheim123!, mateusz@htl.rennweg.at, user
+    tino, ganzSupergeheim123!, tino@htl.rennweg.at, user
+    august, ganzSupergeheim123!, hor@htl.rennweg.at, admin
 
    
+User bearbeiten
+----------------
+
+Ein Lehrer kann andere Accounts(**AUCH LEHRER**) bearbeiten und entfernen.
+
+.. image:: images/edit_user.png
+  :width: 600
+  :alt: edit_user
+  
+Gruppe erstellen
+----------------
+
+Ein Lehrer kann Gruppen erstellen und User zu ihr hinzufügen.
+
+.. image:: images/add_group.png
+  :width: 600
+  :alt: add_group
+
+
 Überblick der Features
 ----------------
 
