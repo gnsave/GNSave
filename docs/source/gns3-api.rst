@@ -6,6 +6,10 @@ GNS3 API
 Aufbau
 ------------
 
+.. image:: images/gns_api_class_diagram.png
+  :width: 600
+  :alt: GNS-API Klassendiagramm
+  
 To-Do
    
 Verwendete Module
