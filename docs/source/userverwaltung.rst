@@ -174,4 +174,8 @@ add_user_to_group
 Überblick der Features
 ----------------
 
-Die Userverwaltung ermöglicht den Lehrern bequem auf der Weboberfläche User und Gruppen zu verwalten. Die Userverwaltung ist auch der Grundstein des Fileservers. Dadurch, dass die Schüler durch die Django Accounts segregiert werden können wir beiden Typen verschiedene Features freischalten und verschiedenen Usern erlauben, Zugriff nur auf die "richtigen" Dateien zu haben.
+Die Userverwaltung ermöglicht den Lehrern bequem auf der Weboberfläche User und Gruppen zu verwalten. 
+
+Die Userverwaltung ist auch der Grundstein des Fileservers. 
+
+Dadurch, dass die Schüler durch die Django Accounts segregiert werden können wir beiden Typen verschiedene Features freischalten und verschiedenen Usern erlauben, Zugriff nur auf die "richtigen" Dateien zu haben.
