@@ -45,13 +45,13 @@ Danach muss man mithilfe der Dockerfile das GNSave Image installieren
 
 .. code-block:: console
 
-   gnsave@server $ docker build -t gnsave/GNSave .
+   gnsave@server $ docker build -t gnsave .
 
 Um die Installation abzuschließen muss man dann aus dem Image eine Container bauen
 
 .. code-block:: console
 
-   gnsave@server $ docker run -dit -p 80:80 --name gnsave_docker gnsave/GNSave
+   gnsave@server $ docker run -dit -p 80:80 --name gnsave_docker gnsave
    
    
 Testung der Installation
