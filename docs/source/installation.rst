@@ -24,7 +24,7 @@ Zu guter Letzt muss man die manage.py starten
 
 .. code-block:: console
 
-   gnsave@server $ python3 manage.py runserver 0.0.0.0
+   gnsave@server $ python3 manage.py runserver 0.0.0.0:80
    
 Dockerisiertes Django mit Apache2
 ----------------
