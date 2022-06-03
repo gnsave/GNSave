@@ -61,6 +61,31 @@ Testung der Installation
 .. code-block:: console
 
    gnsave@server $ curl -X GET http://localhost:80/
+   
+   
+Mögliche Fehler
+----------------
+
+Error processing tar file no space left on device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Problem:**
+Wenn man die Dockerfile ausführt wird folgender Error Code geworfen:
+
+Error processing tar file(exit status 1): write ...: no space left on device
+ 
+**Grund:** 
+
+Es ist nicht genügend Speicherplatz für das Herunterladen der Images vorhanden. 
+
+Nach Abschluss der Installation wird etwa 1 GB verfügbarer Speicherplatz für die Images benötigt.  Dies beinhaltet nicht den zwischenzeitlichen/temporären Speicherplatz, den Docker für verschiedene Schichten während der Installation benötigt. 
+
+**Lösung:**
+
+Führe den Befehl df /var/lib/docker/ aus, um den verfügbaren freien Speicherplatz anzuzeigen. 
+
+Überprüfen Sie das Verzeichnis /var/lib/docker/ und weisen Sie genügend Speicherplatz zu, um die Installation durchzuführen.
+
 
 
  
