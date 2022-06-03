@@ -16,9 +16,15 @@ Danach muss man Python und die Python Libraries(z.B. Django) installieren
 
 .. code-block:: console
 
-   gnsave@server $ cd gnsave 
    gnsave@server $ sudo apt-get install python3
+   gnsave@server $ cd gnsave/GNSave
    gnsave@server $ pip3 install -r requirements.txt
+
+Zu guter Letzt muss man die manage.py starten
+
+.. code-block:: console
+
+   gnsave@server $ python3 manage.py runserver 0.0.0.0
    
 Dockerisiertes Django mit Apache2
 ----------------
@@ -39,14 +45,13 @@ Danach muss man mithilfe der Dockerfile das GNSave Image installieren
 
 .. code-block:: console
 
-   gnsave@server $ cd docker
    gnsave@server $ docker build -t gnsave/GNSave .
 
 Um die Installation abzuschließen muss man dann aus dem Image eine Container bauen
 
 .. code-block:: console
 
-   gnsave@server $ docker run -dit -p 80:80 gnsave/GNSave gnsave_docker
+   gnsave@server $ docker run -dit -p 80:80 --name gnsave_docker gnsave/GNSave
    
    
 Testung der Installation
