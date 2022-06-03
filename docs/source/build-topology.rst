@@ -12,7 +12,7 @@ Das Build Topology System bietet die Möglichkeit GNS3 Projekte von Virtuelle Ho
 --------------------------------
 Bei Start unseres Tools landet mal zu allererst auf der Dashboard Page. Hier werden abgesehen von allen virtuellen Hosts mit denen eine Verbindung besteht auch ein Button um einen virtuellen Hosts hinzuzufügen (eine Verbindung mit diesem aufbauen) angezeigt.
 
-.. image:: images/dashboard-page.png
+.. image:: images/dashboard-page.PNG
   :width: 600
   :alt: Dashboard Page
 
@@ -20,7 +20,7 @@ Virtueller Host Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Hier kann man nun auf eine der Boxen, welche einen virtuellen Host repräsentieren, anklicken und kommt dann auf eine Ansicht mit der man eine detailreichere Ansicht eines virtuellen Hosts sieht. Man sieht alle GNS3 Projekte, welche sich auf der virtuellen Maschine befinden, in einer vertikalen Reihe. Darunter befinden sich zwei Buttons, einmal einer der den User wieder auf zu der Dashboard Page bringt und einmal ein Button um ein GNS3 Projekt auf dem virtuellen Host hinzuzufügen.
 
-.. image:: images/virtuel-host-detail.png
+.. image:: images/virtuel-host-detail.PNG
   :width: 600
   :alt: Virtueller Host Page
   
