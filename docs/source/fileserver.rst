@@ -27,7 +27,7 @@ So könnte das Filesystem eines Lehrers aussehen (er hat in jedem Folder den er 
  
 Im Kontrast dazu ist das zum Beispiel das Filesystem das ein Schüler sieht(grau heißt er kann nichts verändern):
 
-.. image:: images/schüler.svg
+.. image:: images/schueler.svg
   :width: 600
   :alt: schüler
 
