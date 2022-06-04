@@ -133,6 +133,8 @@ Rendert die Devices Page bzw. die Seite bei der man die Devices, welche sich in 
 config
 ^^^^^^^^^^^^^^^^
 
+Rendert die Config Page bzw. die Seite bei der man die Devices, welche sich in einem GNS3 Projekt befinden, aussuchen kann um diese mit einer bestimmten Konfiguration zu konfigurieren.
+
 .. code-block:: python
 
   @login_required()
@@ -154,6 +156,8 @@ config
 
 push_config_to_devices
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rendert die Config Page bzw. die Seite bei der man die Devices, welche sich in einem GNS3 Projekt befinden, aussuchen kann um diese mit einer bestimmten Konfiguration zu konfigurieren. Hierbei wird die Konfiguration nun wirklich auf die ausgewählten Devices mittels Threads gepushed/gesendet.
 
 .. code-block:: python
 
@@ -189,6 +193,8 @@ push_config_to_devices
 choose_vm_to_clone_from
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+Rendert die "Choose VM to clone from" Page bzw. die Seite bei der man sich die VM aussuchen kann, von welcher man im folgenden ein GNS3 Projekt zum clonen/kopieren benutzt.
+
 .. code-block:: python
 
   @login_required()
@@ -200,6 +206,8 @@ choose_vm_to_clone_from
 
 choose_project_to_clone
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rendert die "Choose Project to clone" Page bzw. die Seite bei der man sich das GNS3 Projekt aussuchen kann, welches man im Folgenden zu einer anderen oder mehreren VMs cloned/kopiert.
 
 .. code-block:: python
 
@@ -218,6 +226,8 @@ choose_project_to_clone
 
 select_what_vms_to_clone_to
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rendert die "Select VM(s) to clone to" Page bzw. die Seite bei der man sich die VM(s) aussuchen kann, zu denen man im Folgenden ein GNS3 Projekt cloned/kopiert.
 
 .. code-block:: python
 
@@ -242,6 +252,8 @@ select_what_vms_to_clone_to
 
 clone_project
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cloned/Kopiert nun das ausgewählte GNS3 Projekt von der ausgewählten VM zu den ausgewählten VM(s).
 
 .. code-block:: python
 
@@ -268,6 +280,8 @@ clone_project
 add_vm
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+Rendert die "Add VM" Page und holt sich den Namen, die IP-Addresse sowie die Portnummer um diese VM dann hinzuzufügen.
+
 .. code-block:: python
 
   @login_required()
@@ -290,6 +304,8 @@ add_vm
 add_project
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
+Rendert die "Add Project" Page und holt sich den Namen um dieses GNS3 Projekt dann hinzuzufügen.
+
 .. code-block:: python
 
   @login_required()
@@ -310,6 +326,8 @@ add_project
 
 add_device
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rendert die "Add Device" Page und holt sich den Namen sowie den Node-Type um dieses Device dann hinzuzufügen.
 
 .. code-block:: python
 
@@ -342,6 +360,8 @@ add_device
 
 edit
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
+Rendert die "Edit Device" Page und bietet eine Möglichkeit das Device zu starten, zu stoppen und den Namen zu ändern.
 
 .. code-block:: python
 
