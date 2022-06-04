@@ -46,10 +46,12 @@ Verwendete Funktionen
 
 Im folgenden werden die verwendeten Funktionen erklärt:
 
-Pfad: namespaces/build-topology/views.py
+Pfad: ``namespaces/build-topology/views.py``
 
 virtualmachines
 ^^^^^^^^^^^^^^^^
+
+Rendert die Dashboard Page bzw. die Startseite bei der man alle VM's mit einer Verbindung sieht.
 
 .. code-block:: python
 
@@ -61,6 +63,8 @@ virtualmachines
 
 projects
 ^^^^^^^^^^^^^^^^
+
+Rendert die Projekt Page bzw. die Seite bei der man alle GNS3 Projekte, welche auf einer VM gespeichert sind, sieht.
 
 .. code-block:: python
 
@@ -83,6 +87,8 @@ projects
 reload
 ^^^^^^^^^^^^^^^^
 
+Wird für einen reload der Page benutzt bzw. man wird wieder auf die derzeitige Page gebracht.
+
 .. code-block:: python
 
   @login_required()
@@ -95,6 +101,8 @@ reload
 
 devices
 ^^^^^^^^^^^^^^^^
+
+Rendert die Devices Page bzw. die Seite bei der man die Devices, welche sich in einem GNS3 Projekt befinden, sieht.
 
 .. code-block:: python
 
