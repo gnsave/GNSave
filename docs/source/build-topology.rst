@@ -545,7 +545,7 @@ Verwendete Funktionen (project.py)
 
 Im folgenden werden die verwendeten Funktionen der Project Klasse erklärt:
 
-Pfad: ``assets/gns3_api_calls/virtual_machine.py``
+Pfad: ``assets/gns3_api_calls/project.py``
 
 Project Class
 ^^^^^^^^^^^^^^^^^^^^^^
