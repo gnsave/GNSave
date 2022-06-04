@@ -28,4 +28,4 @@ Die Netto relevanten Files sind im netto_clone Ordner aufzufinden.
 Assets
 ------------
 
-Für Assets wie VMs, GNS3, JS, Bilder gilt 
+Für Assets wie VMs, GNS3, JS, Bilder gilt das auffinden im assets Ordner
