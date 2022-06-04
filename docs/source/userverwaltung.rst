@@ -96,7 +96,7 @@ Die File könnte zum Beispiel so aussehen:
 User bearbeiten
 ----------------
 
-Ein Lehrer kann andere Accounts(**AUCH LEHRER**) bearbeiten und entfernen.
+Ein Lehrer kann andere Accounts (**AUCH LEHRER**) bearbeiten und entfernen.
 
 .. image:: images/edit_user.png
   :width: 600
@@ -156,7 +156,7 @@ Das ist der Ablauf wenn ein Lehrer eine Gruppe erstellt
 Verwendete Funktionen
 ----------------
 
-Pfad: namespaces/fileserver/views.py
+Pfad: ``namespaces/fileserver/views.py``
 
 add_user
 ^^^^^^^^^^^^
