@@ -41,10 +41,7 @@ Hier sieht man den Aufbau der Build-Topology Funktionen:
   :width: 600
   :alt: GNS3-API Klassendiagramm
    
-Verwendete Funktionen
---------------------
-
-views.py
+Verwendete Funktionen (views.py)
 --------------------
 
 Im folgenden werden die verwendeten Funktionen der views.py Datei erklärt:
@@ -395,8 +392,8 @@ Rendert die "Edit Device" Page und bietet eine Möglichkeit das Device zu starte
 
       return redirect(f"/build_topology/devices/{vm}/{project}")
 
-virtual_machine.py
---------------------
+Verwendete Funktionen (virtual_machine.py)
+----------------------------------
 
 Im folgenden werden die verwendeten Funktionen der VirtualMachine Klasse erklärt:
 
@@ -405,7 +402,7 @@ Pfad: ``assets/gns3_api_calls/virtual_machine.py``
 VirtualMachine Class
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Rendert die Dashboard Page bzw. die Startseite bei der man alle VM's mit einer Verbindung sieht.
+Realisiert eine Klasse, welche eine virtuelle Machine repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
 
 .. code-block:: python
 
@@ -426,7 +423,8 @@ Rendert die Dashboard Page bzw. die Startseite bei der man alle VM's mit einer V
 init_projects
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Initialisiert ...
+Na bro what da fuc macht die methode
 
 .. code-block:: python
 
@@ -444,14 +442,11 @@ TODO
 create_project
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Erzeugt ein Projekt mittels Konstruktor.
 
 .. code-block:: python
 
     def create_project(self, name):
-        """
-        creates a project on a physical computer
-        """
         self.projects[name] = Project(ip=self.ip, vm_ip=self.vm_ip,
                                       port=self.port,
                                       name=name
@@ -461,14 +456,11 @@ TODO
 get_vm_ip
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Returned die IP-Addresse einer virtuellen Machine.
 
 .. code-block:: python
 
     def get_vm_ip(self):
-        """
-        gets the ip address of a virtual machine on a physical computer
-        """
         request = requests.get(f"http://{self.ip}:{self.port}/v2/computes/vm")
         vm_ip = request.json()["host"]
         if request.status_code == 404:
@@ -478,14 +470,11 @@ TODO
 get_vm_port
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Returned die Portnummer einer virtuellen Machine.
 
 .. code-block:: python
 
     def get_vm_port(self):
-        """
-        gets the port number of a virtual machine on a physical computer
-        """
         request = requests.get(f"http://{self.ip}:{self.port}/v2/computes/vm")
         vm_port = request.json()["port"]
         if request.status_code == 404:
@@ -495,7 +484,7 @@ TODO
 get_status
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Returned den Status ...
 
 .. code-block:: python
 
@@ -505,20 +494,17 @@ TODO
 get_projects
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Returned alle Projekte der VM.
 
 .. code-block:: python
 
     def get_projects(self):
-        """
-        gets the project from a physical computer
-        """
         return self.projects
 
 download_project_from_vm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Lädt ein Projekt von einer VM herunter.
 
 .. code-block:: python
 
@@ -530,7 +516,7 @@ TODO
 upload_project_to_vm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Lädt ein Projekt auf eine VM.
 
 .. code-block:: python
 
@@ -543,7 +529,7 @@ TODO
 clone_project
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Cloned/Kopiert ein Projekt von einer VM zu mehreren VMs oder einer VM.
 
 .. code-block:: python
 
