@@ -8,6 +8,11 @@ Userverwaltung
 
 Die Userverwaltung basiert auf der schon in Django vorhandenen Userverwaltung. Sie verwaltet Benutzerkonten, Gruppen, Berechtigungen und Cookie-basierte Benutzersitzungen.
 
+Die Userverwaltung ermöglicht den Lehrern bequem auf der Weboberfläche User und Gruppen zu verwalten.
+
+Die Userverwaltung ist auch der Grundstein des Fileservers.
+
+Dadurch, dass die Schüler durch die Django Accounts segregiert werden können wir beiden Typen verschiedene Features freischalten und verschiedenen Usern erlauben, Zugriff nur auf die "richtigen" Dateien zu haben.
 
 Usertypen
 ------------
@@ -16,7 +21,7 @@ In GNSave gibt es zwei Usertypen: Schüler und Lehrer. Die Lehreraccounts basier
 
 Je nachdem welcher Typ der User ist hat werden ihm andere Funktionen freigeschaltet.
 
-Jeder User hat einen Namen, ein Passwort, ein E-Mail und TYP.
+Jeder User hat einen Namen, ein Passwort, ein E-Mail und Typ.
 
 Die folgenden Rechte sehen wie folgt aus:
 
@@ -103,6 +108,47 @@ Ein Lehrer kann Gruppen erstellen und User zu ihr hinzufügen.
   :width: 600
   :alt: add_group
 
+Ablauf
+----------------
+
+User erstellen
+^^^^^^^^^^
+
+Das ist der Ablauf wenn ein Lehrer einen User erstellt
+
+.. image:: images/user_erstellen.jpeg
+   :width: 700
+   :alt: schüler
+
+User löschen
+^^^^^^^^^^
+
+Das ist der Ablauf wenn ein Lehrer einen User löscht
+
+.. image:: images/user_loeschen.jpeg
+   :width: 700
+   :alt: schüler
+
+Passwort eines Users ändern
+^^^^^^^^^^
+
+Das ist der Ablauf wenn ein Lehrer das Passwort eines Users ändert
+
+.. image:: images/password_aendern.jpeg
+   :width: 700
+   :alt: schüler
+
+Gruppe erstellen
+^^^^^^^^^^
+
+Das ist der Ablauf wenn ein Lehrer eine Gruppe erstellt
+
+.. image:: images/gruppe_erstellen.jpeg
+   :width: 700
+   :alt: schüler
+
+
+
 
 Verwendete Funktionen
 ----------------
@@ -170,12 +216,3 @@ add_user_to_group
        myuser = User.objects.get(username=username)
        my_group.user_set.add(myuser)
        os.mkdir(f"./files/courses/{groupname}/{username}")
-    
-Überblick der Features
-----------------
-
-Die Userverwaltung ermöglicht den Lehrern bequem auf der Weboberfläche User und Gruppen zu verwalten. 
-
-Die Userverwaltung ist auch der Grundstein des Fileservers. 
-
-Dadurch, dass die Schüler durch die Django Accounts segregiert werden können wir beiden Typen verschiedene Features freischalten und verschiedenen Usern erlauben, Zugriff nur auf die "richtigen" Dateien zu haben.

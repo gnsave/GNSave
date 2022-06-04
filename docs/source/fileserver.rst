@@ -8,6 +8,12 @@ Fileserver
 
 Der Fileserver basiert auf einem Kurs System. Die User haben jedoch keine Rechte sondern entweder die Schüler oder die Lehrer Rolle. Je nach Accounttyp sieht der User dann andere Sachen. Lehrer haben zum Beispiel Zugriff auf das Cloning Tool und Schüler nicht.
 
+Das von uns erstellte Filesystem hat keine Permissions, deswegen muss die Zugriffsverwaltung von der Weboberfläche übernommen werden.
+
+Das Filesystem ermöglicht jedoch trotzdem eine einfache Segregation von privaten und kursspezifischen Files. Außerdem ermöglicht es die Segregation zwischen den Files von Schülern. Jeder Schüler kann nur auf seine eigenen Dateien zugreifen und nicht auf die von seinen Mitschülern oder anderen Schülern.
+
+Die automatisierte Ordnerverwaltung wird durch die oben angegeben Python Funktionen ( :ref:`verwendete_funktionen` ) realisiert und sie sind deswegen in der Django App eingebunden
+
 Filesystem
 ------------
 
@@ -55,9 +61,31 @@ Das Filesystem ist dann logisch in zwei Teile geteilt. In die User und die Cours
               └── matura_uebung.gns3project
 
 .. image:: images/filesystem.svg
-  :width: 800
-  :alt: schüler
-   
+   :width: 800
+   :alt: schüler
+
+Ablauf
+----------------
+
+Fileupload
+^^^^^^^^^^
+
+Das ist der Ablauf eines Fileuploads
+
+.. image:: images/fileserver_upload_sequence.jpeg
+   :width: 700
+   :alt: schüler
+
+Filedownload
+^^^^^^^^^^
+
+Das ist der Ablauf eines Fileuploads
+
+.. image:: images/fileserver_download_sequence.jpeg
+   :width: 700
+   :alt: schüler
+
+
 .. _verwendete_funktionen:
 
 Verwendete Funktionen
@@ -118,16 +146,3 @@ delete_user
             shutil.rmtree(f"./files/courses/{kurs}/{username}")
 
     shutil.rmtree(f"./files/users/{username}")
-    
- 
-   
-Überblick der Features
-----------------
-
-Das von uns erstellte Filesystem hat keine Permissions, deswegen muss die Zugriffsverwaltung von der Weboberfläche übernommen werden.
-
-Das Filesystem ermöglicht jedoch trotzdem eine einfache Segregation von privaten und kursspezifischen Files. Außerdem ermöglicht es die Segregation zwischen den Files von Schülern. Jeder Schüler kann nur auf seine eigenen Dateien zugreifen und nicht auf die von seinen Mitschülern oder anderen Schülern.
-
-Die automatisierte Ordnerverwaltung wird durch die oben angegeben Python Funktionen ( :ref:`verwendete_funktionen` ) realisiert und sie sind deswegen in der Django App eingebunden
-
- 
