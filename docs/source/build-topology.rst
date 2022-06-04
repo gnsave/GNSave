@@ -44,7 +44,10 @@ Hier sieht man den Aufbau der Build-Topology Funktionen:
 Verwendete Funktionen
 --------------------
 
-Im folgenden werden die verwendeten Funktionen erklärt:
+views.py
+--------------------
+
+Im folgenden werden die verwendeten Funktionen der views.py Datei erklärt:
 
 Pfad: ``namespaces/build-topology/views.py``
 
@@ -392,3 +395,161 @@ Rendert die "Edit Device" Page und bietet eine Möglichkeit das Device zu starte
 
       return redirect(f"/build_topology/devices/{vm}/{project}")
 
+virtual_machine.py
+--------------------
+
+Im folgenden werden die verwendeten Funktionen der VirtualMachine Klasse erklärt:
+
+Pfad: ``assets/gns3_api_calls/virtual_machine.py``
+
+VirtualMachine Class
+^^^^^^^^^^^^^^^^^^^^^^
+
+Rendert die Dashboard Page bzw. die Startseite bei der man alle VM's mit einer Verbindung sieht.
+
+.. code-block:: python
+
+  class VirtualMachine:
+    def __init__(self, name, ip, port):
+        self.name = name
+        self.ip = ip
+        self.port = port
+        self.vm_ip = self.get_vm_ip()
+        self.vm_port = self.get_vm_port()
+        self.projects = {}
+        self.init_projects()
+        self.status = self.get_status()
+
+    def __str__(self):
+        return f"(Virtual Machine) - Name: {self.name}, IP: {self.ip}, Port: {self.port}, Projects: {len(self.projects)}"
+        
+init_projects
+^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def init_projects(self):
+        projects = requests.get(url=f"http://{self.ip}:{self.port}/v2/projects")
+        for project in projects.json():
+            if project not in projects:
+                self.projects[project["name"]] = Project(ip=self.ip,
+                                                         vm_ip=self.vm_ip,
+                                                         port=self.port,
+                                                         name=project["name"],
+                                                         project_id=project["project_id"]
+                                                         )
+
+create_project
+^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def create_project(self, name):
+        """
+        creates a project on a physical computer
+        """
+        self.projects[name] = Project(ip=self.ip, vm_ip=self.vm_ip,
+                                      port=self.port,
+                                      name=name
+                                      )
+        self.projects[name].add_compute()
+
+get_vm_ip
+^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def get_vm_ip(self):
+        """
+        gets the ip address of a virtual machine on a physical computer
+        """
+        request = requests.get(f"http://{self.ip}:{self.port}/v2/computes/vm")
+        vm_ip = request.json()["host"]
+        if request.status_code == 404:
+            vm_ip = self.ip
+        return vm_ip
+
+get_vm_port
+^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def get_vm_port(self):
+        """
+        gets the port number of a virtual machine on a physical computer
+        """
+        request = requests.get(f"http://{self.ip}:{self.port}/v2/computes/vm")
+        vm_port = request.json()["port"]
+        if request.status_code == 404:
+            vm_port = self.port
+        return vm_port
+
+get_status
+^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def get_status(self):
+        return requests.get(f"http://{self.ip}:{self.port}/v2/version").status_code == 200
+
+get_projects
+^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def get_projects(self):
+        """
+        gets the project from a physical computer
+        """
+        return self.projects
+
+download_project_from_vm
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def download_project_from_vm(self, name, filepath):
+        a = requests.get(f"http://{self.ip}:{self.port}/v2/projects/{self.projects[name].get_project_id()}/export")
+        with open(f"{filepath}/{name}.gns3project", 'wb') as file:
+            file.write(a.content)
+
+upload_project_to_vm
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def upload_project_to_vm(self, filepath):
+        project_id = f"{secrets.token_hex(4)}-{secrets.token_hex(2)}-{secrets.token_hex(2)}-{secrets.token_hex(2)}-{secrets.token_hex(6)}"
+        with open(filepath, 'rb') as file:
+            data = file.read()
+        requests.post(f"http://{self.ip}:{self.port}/v2/projects/{project_id}/import", data=data)
+
+clone_project
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+TODO
+
+.. code-block:: python
+
+    def clone_project(self, project_name, vm_list):
+        data = requests.get(
+            f"http://{self.ip}:{self.port}/v2/projects/{self.projects[project_name].get_project_id()}/export")
+        for vm in vm_list:
+            project_id = f"{secrets.token_hex(4)}-{secrets.token_hex(2)}-{secrets.token_hex(2)}-{secrets.token_hex(2)}-{secrets.token_hex(6)}"
+            requests.post(f"http://{vm.ip}:{vm.port}/v2/projects/{project_id}/import", data=data)
