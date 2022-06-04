@@ -42,9 +42,14 @@ Hier sieht man den Aufbau der Build-Topology Funktionen:
   :alt: GNS3-API Klassendiagramm
    
 Verwendete Funktionen
-----------------
+--------------------
 
-namespaces/build-topology/views.py
+Im folgenden werden die verwendeten Funktionen erklärt:
+
+Pfad: namespaces/build-topology/views.py
+
+virtualmachines
+^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -53,6 +58,9 @@ namespaces/build-topology/views.py
       if not request.user.is_superuser:
           return render(request, "user/404.html")
       return render(request, "admin/Build Topology/Virtual Machines/virtual_machines.html")
+
+projects
+^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -72,6 +80,9 @@ namespaces/build-topology/views.py
       return render(request, "admin/Build Topology/Projects/projects.html", 
                     context={"projects": virtual_machine.get_projects(), "virtual_machine": vm})
 
+reload
+^^^^^^^^^^^^^^^^
+
 .. code-block:: python
 
   @login_required()
@@ -81,6 +92,9 @@ namespaces/build-topology/views.py
       for vm in virtual_machines.values():
           vm.init_projects()
       return redirect("/")
+
+devices
+^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -108,6 +122,9 @@ namespaces/build-topology/views.py
       return render(request, "admin/Build Topology/Devices/devices.html",
                     context={"devices": projekt.get_devices().items(), "project": project, "virtual_machine": vm})
 
+config
+^^^^^^^^^^^^^^^^
+
 .. code-block:: python
 
   @login_required()
@@ -126,6 +143,9 @@ namespaces/build-topology/views.py
 
       return render(request, "admin/Build Topology/Devices/conf_devices.html",
                     context={"devices": projekte[project].get_devices(), "project": project, "virtual_machine": vm})
+
+push_config_to_devices
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -158,6 +178,8 @@ namespaces/build-topology/views.py
       return render(request, "admin/Build Topology/Devices/conf_devices.html",
                     context={"devices": projekt.get_devices(), "project": project, "virtual_machine": vm})
 
+choose_vm_to_clone_from
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -167,6 +189,9 @@ namespaces/build-topology/views.py
           return render(request, "user/404.html")
 
       return render(request, "admin/Build Topology/Clone Project/choose_vm_to_clone_from.html")
+
+choose_project_to_clone
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -182,6 +207,9 @@ namespaces/build-topology/views.py
 
       return render(request, "admin/Build Topology/Clone Project/choose_project_to_clone.html",
                     context={"projects": virtual_machines[vm].get_projects(), "virtual_machine": vm})
+
+select_what_vms_to_clone_to
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -203,6 +231,9 @@ namespaces/build-topology/views.py
 
       return render(request, "admin/Build Topology/Clone Project/select_vms.html",
                     context={"project": project, "virtual_machine": vm})
+
+clone_project
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -226,6 +257,9 @@ namespaces/build-topology/views.py
 
       return redirect("/build_topology/relaod")
 
+add_vm
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code-block:: python
 
   @login_required()
@@ -245,6 +279,9 @@ namespaces/build-topology/views.py
           return render(request, "admin/404.html")
       return redirect("/")
 
+add_project
+^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code-block:: python
 
   @login_required()
@@ -262,6 +299,9 @@ namespaces/build-topology/views.py
       name = request.POST.get("name", "")
       virtual_machines[vm].create_project(name)
       return redirect(f"/build_topology/projects/{vm}")
+
+add_device
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -291,6 +331,9 @@ namespaces/build-topology/views.py
       projekt.create_device(name, node_type)
       return render(request, "admin/Build Topology/Devices/devices.html",
                     context={"devices": projekt.get_devices().items(), "project": project, "virtual_machine": vm})
+
+edit
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
