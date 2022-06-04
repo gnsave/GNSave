@@ -35,11 +35,11 @@ Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button 
 Aufbau
 ----------------
 
+Hier sieht man den Aufbau der Build-Topology Funktionen:
+
 .. image:: images/gns3-api-class-diagram.svg
   :width: 600
   :alt: GNS3-API Klassendiagramm
-  
-To-Do
    
 Verwendete Funktionen
 ----------------
