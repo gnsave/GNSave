@@ -8,6 +8,9 @@ Fileserver
 
 Der Fileserver basiert auf einem Kurs System. Die User haben jedoch keine Rechte sondern entweder die Schüler oder die Lehrer Rolle. Je nach Accounttyp sieht der User dann andere Sachen. Lehrer haben zum Beispiel Zugriff auf das Cloning Tool und Schüler nicht.
 
+Überblick der Features
+------------
+
 Das von uns erstellte Filesystem hat keine Permissions, deswegen muss die Zugriffsverwaltung von der Weboberfläche übernommen werden.
 
 Das Filesystem ermöglicht jedoch trotzdem eine einfache Segregation von privaten und kursspezifischen Files. Außerdem ermöglicht es die Segregation zwischen den Files von Schülern. Jeder Schüler kann nur auf seine eigenen Dateien zugreifen und nicht auf die von seinen Mitschülern oder anderen Schülern.

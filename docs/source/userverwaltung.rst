@@ -8,6 +8,9 @@ Userverwaltung
 
 Die Userverwaltung basiert auf der schon in Django vorhandenen Userverwaltung. Sie verwaltet Benutzerkonten, Gruppen, Berechtigungen und Cookie-basierte Benutzersitzungen.
 
+Überblick der Features
+------------
+
 Die Userverwaltung ermöglicht den Lehrern bequem auf der Weboberfläche User und Gruppen zu verwalten.
 
 Die Userverwaltung ist auch der Grundstein des Fileservers.
