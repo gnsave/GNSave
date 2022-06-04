@@ -539,3 +539,211 @@ Cloned/Kopiert ein Projekt von einer VM zu mehreren VMs oder einer VM.
         for vm in vm_list:
             project_id = f"{secrets.token_hex(4)}-{secrets.token_hex(2)}-{secrets.token_hex(2)}-{secrets.token_hex(2)}-{secrets.token_hex(6)}"
             requests.post(f"http://{vm.ip}:{vm.port}/v2/projects/{project_id}/import", data=data)
+
+Verwendete Funktionen (project.py)
+----------------------------------
+
+Im folgenden werden die verwendeten Funktionen der Project Klasse erklärt:
+
+Pfad: ``assets/gns3_api_calls/virtual_machine.py``
+
+Project Class
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+  class Project:
+      def __init__(self, ip, vm_ip, port, name, project_id=None):
+          self.devices = {}
+          self.ip = ip
+          self.vm_ip = vm_ip
+          self.port = port
+          self.name = name
+
+          if not project_id:
+              self.create_project()
+          else:
+              self.project_id = project_id
+              self.init_devices()
+          self.add_compute()
+      
+      def __str__(self):
+          return f"(Project) - Name: {self.name}, Devices: {len(self.devices)}, Project_id: {self.project_id}"
+
+create_project
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def create_project(self):
+          """
+          creates a gns project
+          """
+          project = requests.post(f"http://{self.ip}:{self.port}/v2/projects", json={"name": self.name})
+          if project.status_code == 201:
+              self.project_id = project.json()["project_id"]
+          else:
+              self.project_id = None
+
+init_devices
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def init_devices(self):
+          devices = requests.get(f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/nodes")
+          for device in devices.json():
+              hda_disk_image = None
+              telnet_port = device['console']
+              node_id = device['node_id']
+              node_type = device['node_type']
+
+              if "hda_disk_image" in device["properties"]:
+                  hda_disk_image = device["properties"]["hda_disk_image"]
+
+              self.devices[device['name']] = Device(
+                  name=device['name'],
+                  ip=self.ip,
+                  vm_ip=self.vm_ip,
+                  port=self.port,
+                  project_id=self.project_id,
+                  node_type=node_type,
+                  values={"node_id": node_id,
+                          "telnet_port": telnet_port,
+                          "hda_disk_image": hda_disk_image
+                          }
+              )
+          return True
+
+create_device
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def create_device(self, name, node_type):
+          self.open()
+          self.devices[name] = Device(name=name,
+                                      ip=self.ip,
+                                      vm_ip=self.vm_ip,
+                                      port=self.port,
+                                      project_id=self.project_id,
+                                      node_type=node_type,
+                                      )
+
+link_device
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def link_devices(self, node1, node2, adapter1, adapter2):
+          self.open()
+          response = requests.post(f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/links", json={
+              "nodes": [
+                  {
+                      "adapter_number": adapter1,
+                      "node_id": self.devices[node1].node_id,
+                      "port_number": 0
+                  },
+                  {
+                      "adapter_number": adapter2,
+                      "node_id": self.devices[node2].node_id,
+                      "port_number": 0
+                  }
+              ]
+          })
+          if not response.status_code == 201:
+              print(response.json())
+
+add_compute
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def add_compute(self):
+          requests.post(f"http://{self.ip}:{self.port}/v2/compute/projects", json={
+              "name": self.name,
+              "project_id": self.project_id,
+              "variables": None
+          })
+
+write_config
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def write_config(self, name, config, timeout=240):
+          self.devices[name].write_config(config, timeout)
+
+start_device
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def start_device(self, name):
+          self.devices[name].start_device()
+
+stop_device
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def stop_device(self, name):
+          self.devices[name].stop_device()
+
+open
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def open(self):
+          requests.post(f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/open")
+
+close
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def close(self):
+          requests.post(f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/close")
+
+get_devices
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def get_devices(self):
+          return self.devices
+
+get_project
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+      def get_project_id(self):
+          return self.project_id
