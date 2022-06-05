@@ -423,8 +423,7 @@ Realisiert eine Klasse, welche eine virtuelle Machine repräsentiert. Die ``__in
 init_projects
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Initialisiert ...
-Na bro what da fuc macht die methode
+Initialisiert alle GNS3 Projekte einer VM.
 
 .. code-block:: python
 
@@ -484,7 +483,7 @@ Returned die Portnummer einer virtuellen Machine.
 get_status
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Returned den Status ...
+Returned den Status ob die VM auf einem Host läuft oder nicht.
 
 .. code-block:: python
 
@@ -575,14 +574,11 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 create_project
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Erzeugt ein GNS3 Projekt auf dem Host.
 
 .. code-block:: python
 
       def create_project(self):
-          """
-          creates a gns project
-          """
           project = requests.post(f"http://{self.ip}:{self.port}/v2/projects", json={"name": self.name})
           if project.status_code == 201:
               self.project_id = project.json()["project_id"]
@@ -592,7 +588,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 init_devices
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Initialisiert alle Devices in einem GNS3 Projekt.
 
 .. code-block:: python
 
@@ -624,7 +620,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 create_device
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Erstellt ein Device in einem GNS3 Projekt.
 
 .. code-block:: python
 
@@ -641,7 +637,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 link_device
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Linked/Verbindet zwei Devices in einem GNS3 Projek über ausgewählte Adapter miteinander.
 
 .. code-block:: python
 
@@ -667,7 +663,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 add_compute
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+TODO
 
 .. code-block:: python
 
@@ -681,7 +677,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 write_config
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Konfiguriert ein Device in einem GNS3 Projekt.
 
 .. code-block:: python
 
@@ -691,7 +687,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 start_device
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Startet ein Device in einem GNS3 Projekt.
 
 .. code-block:: python
 
@@ -701,7 +697,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 stop_device
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Stoppt ein Device in einem GNS3 Projekt.
 
 .. code-block:: python
 
@@ -711,7 +707,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 open
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Öffnet ein GNS3 Projekt, sodass diverse schon erwähnte Feature & Funktionen ausgeführt werden können.
 
 .. code-block:: python
 
@@ -721,7 +717,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 close
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Schließt ein GNS3 Projekt.
 
 .. code-block:: python
 
@@ -731,7 +727,7 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 get_devices
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Returned alle Devices in einem GNS3 Projekt.
 
 .. code-block:: python
 
@@ -741,9 +737,145 @@ Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__``
 get_project
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Realisiert eine Klasse, welche ein GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+Returned die ID eines GNS3 Projektes.
 
 .. code-block:: python
 
       def get_project_id(self):
           return self.project_id
+
+Verwendete Funktionen (device.py)
+----------------------------------
+
+Im folgenden werden die verwendeten Funktionen der Device Klasse erklärt:
+
+Pfad: ``assets/gns3_api_calls/device.py``
+
+Device Class
+^^^^^^^^^^^^^^^^^^^^^^
+
+Realisiert eine Klasse, welche ein Device in einem GNS3 Projekt repräsentiert. Die ``__init__`` Funktion initialisiert die Klasse und die ``__str__`` Funktion repräsentiert die Klasse als String.
+
+.. code-block:: python
+
+  class Device:
+      def __init__(self, name, node_type, ip, vm_ip, port, project_id, values=None):
+          self.name = name
+          self.ip = ip
+          self.vm_ip = vm_ip
+          self.port = port
+          self.project_id = project_id
+          if not values:
+              self.node_type = get_node_type(node_type)
+              self.create_device(node_type)
+          else:
+              self.node_type = get_node_type(node_type, values["hda_disk_image"])
+              self.node_id = values["node_id"]
+              self.telnet_port = values["telnet_port"]
+  
+      def __str__(self):
+          return f"(Device) - Name: {self.name}, Telnet Port: {self.telnet_port}, NodeType: {self.node_type['node_type']}"
+
+start_device
+^^^^^^^^^^^^^^^^^^^^^^
+
+Startet ein Device in einem GNS3 Projekt.
+
+.. code-block:: python
+
+      def start_device(self):
+          return requests.post(
+              url=f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/nodes/{self.node_id}/start").status_code == 200
+
+stop_device
+^^^^^^^^^^^^^^^^^^^^^^
+
+Stoppt ein Device in einem GNS3 Projekt.
+
+.. code-block:: python
+
+      def stop_device(self):
+          return requests.post(
+              url=f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/nodes/{self.node_id}/stop").status_code == 200
+
+create_device
+^^^^^^^^^^^^^^^^^^^^^^
+
+Erzeugt ein Device in einem GNS3 Projekt.
+
+.. code-block:: python
+
+      def create_device(self, nt):
+          if nt.startswith("qemu"):
+              self.create_device_qemu()
+          else:
+              create_node = requests.post(url=f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/nodes",
+                                          json={"compute_id": "vm",
+                                                "name": self.name,
+                                                "node_type": self.node_type["node_type"],
+                                                "symbol": self.node_type["symbol"],
+                                                "port_name_format": "Gi{1}/{0}",
+                                                "port_segment_size": 4,
+                                                })
+              if create_node.status_code == 201:
+                  self.node_id = create_node.json()['node_id']
+                  self.telnet_port = create_node.json()['console']
+              else:
+                  print(create_node.json())
+
+create_device_quemu
+^^^^^^^^^^^^^^^^^^^^^^
+
+Erzeugt ein "qemu" Device in einem GNS3 Projekt. Zu "qemu" Devices gehören alle Devices, welches keine Standard GNS3 Devices sind (welche von Haus aus dabei sind), sondern alle welche ein spezifisches OS benutzen. Z.B.: ein Cisco Catalyst 2960 Series Switches. 
+
+.. code-block:: python
+
+      def create_device_qemu(self):
+          create_node = requests.post(
+              url=f"http://{self.ip}:{self.port}/v2/projects/{self.project_id}/nodes",
+              json={"node_type": "qemu",
+                    "compute_id": "vm",
+                    "symbol": self.node_type["symbol"],
+                    "name": self.name,
+                    "properties": {
+                        "hdb_disk_image": self.node_type["hdb_disk_image"],
+                        "hda_disk_image": self.node_type["hda_disk_image"],
+                        "qemu_path": self.node_type["qemu_path"],
+                        "ram": 768,
+                        "adapters": self.node_type["adapters"]
+                    },
+                    "port_name_format": "Gi{1}/{0}",
+                    "port_segment_size": 4,
+                    }
+          )
+          if create_node.status_code == 201:
+              self.node_id = create_node.json()['node_id']
+              self.telnet_port = create_node.json()['console']
+          else:
+              print(create_node.json())
+
+write_config
+^^^^^^^^^^^^^^^^^^^^^^
+
+Schreibt eine beliebige Konfiguration in ein Device.
+
+.. code-block:: python
+
+      def write_config(self, config, timeout=240):
+          self.start_device()
+          
+          connection = telnetlib.Telnet(host=self.vm_ip,
+                                        port=self.telnet_port)
+          connection.read_until(match=b"WirdNichtPassieren", timeout=int(timeout))
+
+          connection.write(chr(13).encode("ascii"))
+          connection.read_until(match=b"WirdNichtPassieren", timeout=5)
+
+          erg = b''
+          for line in config.splitlines():
+              erg += line.encode('ascii') + b'\n'
+
+          connection.write(erg)
+          connection.read_until(match=b"WirdNichtPassieren", timeout=5)
+          connection.close()
+
