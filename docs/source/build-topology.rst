@@ -26,7 +26,7 @@ Hier kann man nun auf eine der Boxen, welche einen virtuellen Host repräsentier
   
 Add Virtual Host Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button klicken und kommt somit zu dieser Ansicht bei der man die IP-Addresse der virtuellen Machine, den Port und ... angeben muss. Läuft alles nach Plan wird auf der Dashboard Page nun eine zusätzliche VM angezeigt.
+Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button klicken und kommt somit zu dieser Ansicht bei der man den Namen, die IP-Addresse sowie den Port der virtuellen Machine angeben muss. Läuft alles nach Plan wird auf der Dashboard Page nun eine zusätzliche VM angezeigt.
 
 .. image:: images/virtuel-host-add.PNG
   :width: 600
@@ -40,9 +40,6 @@ Hier sieht man den Aufbau der Build-Topology Funktionen:
 .. image:: images/gns3-api-class-diagram.svg
   :width: 600
   :alt: GNS3-API Klassendiagramm
-   
-Verwendete Funktionen
-=========================
 
 Verwendete Funktionen (views.py)
 --------------------
