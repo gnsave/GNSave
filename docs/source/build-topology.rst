@@ -72,7 +72,31 @@ Auf der Seite kann man zuerst alle Geräte auswählen, auf denen der gewünschte
 .. image:: images/configure-devices.PNG
   :width: 600
   :alt: Configure Devices View
+  
+Clone Project Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Auf der Seite kann eine VM ausgewählt werden, um von ihr aus ein Projekt auf andere VMs zu kopieren bzw. clonen.
 
+.. image:: images/clone-project-overview.PNG
+  :width: 600
+  :alt: Clone Project Overview
+  
+Choose Project Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Auf der Seite kann ein Projekt ausgewählt werden, welches kopierte werden soll. "Choose Virtual Machines to clone to" bestätigt die Auswahl des Projektes.
+
+.. image:: images/choose-project.PNG
+  :width: 600
+  :alt: Choose Project
+  
+Choose VMs Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Auf der Seite können eine oder mehrere VMs ausgewählt werden, zu denen das davor ausgewählte Projekt geclonet wird.
+
+.. image:: images/choose-vms.PNG
+  :width: 600
+  :alt: Choose VMs
+  
 Aufbau
 ----------------
 
