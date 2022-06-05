@@ -41,6 +41,9 @@ Hier sieht man den Aufbau der Build-Topology Funktionen:
   :width: 600
   :alt: GNS3-API Klassendiagramm
    
+Verwendete Funktionen
+=========================
+
 Verwendete Funktionen (views.py)
 --------------------
 
