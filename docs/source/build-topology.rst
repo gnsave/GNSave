@@ -22,7 +22,7 @@ In der Overview Ansicht gibt es noch zusätzliche Informationen, wie IP-Adressen
 
 .. image:: images/build-topology-overview.png
   :width: 600
-    :alt: Build Topology Overview
+  :alt: Build Topology Overview
 
 Virtual Host Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -56,8 +56,23 @@ Auf dieser Seite werden Informationen zu den Devices angezeigt. Wenn man auf den
 .. image:: images/project-view.png
   :width: 600
   :alt: Project Detail View
-
   
+Create Device Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Hier kann man mit einem Namen und der Art des Gerät (Switch oder Router) ein neues Device dem Project hinzufügen.
+
+.. image:: images/create-device.PNG
+  :width: 600
+  :alt: Create Device View
+  
+Configure Devices Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Auf der Seite kann man zuerst alle Geräte auswählen, auf denen der gewünschte Befehl ausgeführt werden soll. Eine Sleep-Value kann eingestellt werden, um die Ausführung des Befehls zu verzögern (z.B. beim Starten). Dann können die Befehle in das Command-Line-Feld eingegeben werden und mit "Submit" konfiguriert werden.
+
+.. image:: images/configure-devices.PNG
+  :width: 600
+  :alt: Configure Devices View
+
 Aufbau
 ----------------
 
