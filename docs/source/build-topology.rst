@@ -43,7 +43,7 @@ Auf dieser Seite lässt sich ein neues Project anlegen auf dem jeweiligen Host.
   
 Add Virtual Host Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button klicken und kommt somit zu dieser Ansicht bei der man den Namen, die IP-Addresse sowie den Port des GNS-3 Servers angibt (normalerweise IP des Client-PCs und Port 80). Läuft alles nach Plan, wird auf der Dashboard Page nun eine zusätzliche VM angezeigt.
+Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button klicken und kommt somit zu dieser Ansicht bei der man den Namen, die IP-Adresse sowie den Port des GNS-3 Servers angibt (normalerweise IP des Client-PCs und Port 80). Läuft alles nach Plan, wird auf der Dashboard Page nun eine zusätzliche VM angezeigt.
 
 .. image:: images/virtuel-host-add.PNG
   :width: 600
@@ -349,7 +349,7 @@ Cloned/Kopiert nun das ausgewählte GNS3 Projekt von der ausgewählten VM zu den
 add_vm
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Rendert die "Add VM" Page und holt sich den Namen, die IP-Addresse sowie die Portnummer um diese VM dann hinzuzufügen.
+Rendert die "Add VM" Page und holt sich den Namen, die IP-Adresse sowie die Portnummer um diese VM dann hinzuzufügen.
 
 .. code-block:: python
 
@@ -524,7 +524,7 @@ Erzeugt ein Projekt mittels Konstruktor.
 get_vm_ip
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Returned die IP-Addresse einer virtuellen Machine.
+Returned die IP-Adresse einer virtuellen Machine.
 
 .. code-block:: python
 
