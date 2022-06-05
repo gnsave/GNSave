@@ -26,7 +26,7 @@ Hier kann man nun auf eine der Boxen, welche einen virtuellen Host repräsentier
   
 Add Virtual Host Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button klicken und kommt somit zu dieser Ansicht bei der man den Namen, die IP-Addresse sowie den Port der virtuellen Machine angeben muss. Läuft alles nach Plan wird auf der Dashboard Page nun eine zusätzliche VM angezeigt.
+Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button klicken und kommt somit zu dieser Ansicht bei der man den Namen, die IP-Addresse sowie den Port des GNS-3 Servers angibt (normalerweise IP des Client-PCs und Port 80). Läuft alles nach Plan, wird auf der Dashboard Page nun eine zusätzliche VM angezeigt.
 
 .. image:: images/virtuel-host-add.PNG
   :width: 600
