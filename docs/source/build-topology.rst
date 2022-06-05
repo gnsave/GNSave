@@ -81,6 +81,10 @@ Auf der Seite kann eine VM ausgewählt werden, um von ihr aus ein Projekt auf an
   :width: 600
   :alt: Clone Project Overview
   
+.. image:: images/clone-project-diagram.png
+  :width: 600
+  :alt: Clone Project Overview
+  
 Choose Project Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Auf der Seite kann ein Projekt ausgewählt werden, welches kopierte werden soll. "Choose Virtual Machines to clone to" bestätigt die Auswahl des Projektes.
