@@ -663,7 +663,7 @@ Linked/Verbindet zwei Devices in einem GNS3 Projek über ausgewählte Adapter mi
 add_compute
 ^^^^^^^^^^^^^^^^^^^^^^
 
-TODO
+Erzeugt den Ordner indem die custom/qemu Devices/Nodes gespeichert werden.
 
 .. code-block:: python
 
