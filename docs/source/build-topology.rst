@@ -16,6 +16,14 @@ Bei Start unseres Tools landet mal zu allererst auf der Dashboard Page. Hier wer
   :width: 600
   :alt: Dashboard Page
 
+Overview Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+In der Overview Ansicht gibt es noch zusätzliche Informationen, wie IP-Adressen und Project-Anzahl. Auch hier kann man wieder VMs hinzufügen und reloaden, damit neu hinzugekommene VMs angezeigt werden.
+
+.. image:: images/build-topology-overview.png
+  :width: 600
+    :alt: Build Topology Overview
+
 Virtual Host Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Hier kann man nun auf eine der Boxen, welche einen virtuellen Host repräsentieren, klicken und kommt dann auf eine Page mit der man eine detailreichere Ansicht eines virtuellen Hosts sieht. Man sieht alle GNS3 Projekte, welche sich auf der virtuellen Maschine befinden, in einer vertikalen Reihe. Darunter befinden sich zwei Buttons, einmal einer der den User wieder zu der Dashboard Page bringt und einmal einen Button um ein GNS3 Projekt auf dem virtuellen Host hinzuzufügen.
@@ -24,6 +32,15 @@ Hier kann man nun auf eine der Boxen, welche einen virtuellen Host repräsentier
   :width: 600
   :alt: Virtual Host Page
   
+Add Project Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Auf dieser Seite lässt sich ein neues Project anlegen auf dem jeweiligen Host. 
+
+.. image:: images/add-project.png
+  :width: 600
+  :alt: Add Project Page
+
+  
 Add Virtual Host Ansicht
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button klicken und kommt somit zu dieser Ansicht bei der man den Namen, die IP-Addresse sowie den Port des GNS-3 Servers angibt (normalerweise IP des Client-PCs und Port 80). Läuft alles nach Plan, wird auf der Dashboard Page nun eine zusätzliche VM angezeigt.
@@ -31,6 +48,15 @@ Zurück bei der Dashboard Page kann man alternativ auch auf den "Add VM" Button 
 .. image:: images/virtuel-host-add.PNG
   :width: 600
   :alt: Add Virtual Host Page
+  
+Project Ansicht
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Auf dieser Seite werden Informationen zu den Devices angezeigt. Wenn man auf den Namen eines Devices drückt, kann man es Starten oder Stoppen. Außerdem lassen sich hier Devices unter "Create Device" erstellen und konfigurieren unter "Configure Devices".
+
+.. image:: images/project-view.png
+  :width: 600
+  :alt: Project Detail View
+
   
 Aufbau
 ----------------
