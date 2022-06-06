@@ -13,7 +13,7 @@ Für eine Überblick über das Projekt siehe Sektion :doc:`overview`
 
 .. note::
 
-   Dieses Projekt ist in Arbeit.
+   Das Repository ist nicht frei zugänglich. Wenn du keinen Zugriff auf das Repository hast, melde dich bitte bei einem deiner Professoren.
 
 Inhalte
 --------

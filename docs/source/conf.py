@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'gnsave'
+project = 'GNSave'
 copyright = '2022, GNSave'
 author = 'Lorenz Bauer'
 
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = 'v1.0'
 
 # -- General configuration
 
