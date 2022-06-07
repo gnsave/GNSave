@@ -6,8 +6,8 @@ project = 'GNSave'
 copyright = '2022, GNSave'
 author = 'Lorenz Bauer'
 
-release = '1.0'
-version = 'v1.0'
+release = '2.0'
+version = 'v2.0'
 
 # -- General configuration
 
